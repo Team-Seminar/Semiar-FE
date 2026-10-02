@@ -1,0 +1,12 @@
+.form-message {
+  min-height: var(--space-24);
+  margin: 0;
+  color: var(--available);
+  font-size: var(--body-size);
+  font-weight: var(--medium);
+  line-height: var(--body-line);
+}
+
+.form-message[data-type="error"] {
+  color: var(--busy);
+}

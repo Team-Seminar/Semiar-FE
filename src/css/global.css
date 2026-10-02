@@ -1,0 +1,187 @@
+/* 색상·글자·간격과 공용 UI의 전역 기준이다. */
+:root {
+  color-scheme: light;
+
+  --primary: #2563eb;
+  --bg: #f7f9fc;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --sub-text: #475569;
+  --border: #dce3ec;
+  --available: #15803d;
+  --pending: #b45309;
+  --busy: #b91c1c;
+
+  --primary-dark: #1d4ed8;
+  --primary-light: #eff6ff;
+  --focus: #93c5fd;
+  --overlay: rgb(15 23 42 / 48%);
+
+  --available-border: #86efac;
+  --available-bg: #ecfdf3;
+  --pending-border: #fcd34d;
+  --pending-bg: #fffbeb;
+  --busy-dark: #991b1b;
+  --busy-border: #fca5a5;
+  --busy-bg: #fef2f2;
+
+  --font:
+    "NanumBarunGothic", "Noto Sans CJK KR", "Apple SD Gothic Neo",
+    "Malgun Gothic", system-ui, sans-serif;
+  --title-font:
+    "NanumSquare", "Noto Sans CJK KR", "NanumBarunGothic", system-ui,
+    sans-serif;
+  --code-font: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  --title-size: 2rem;
+  --section-size: 1.4rem;
+  --subtitle-size: 1rem;
+  --body-size: 0.9rem;
+  --small-size: 0.8rem;
+  --normal: 400;
+  --medium: 600;
+  --bold: 700;
+  --title-line: 1.3;
+  --body-line: 1.6;
+
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+
+  --page-width: 1240px;
+  --page-padding: var(--space-24);
+
+  --radius: 16px;
+  --radius-large: 24px;
+  --radius-small: 12px;
+  --radius-round: 999px;
+  --button-height: 44px;
+  --input-height: 48px;
+  --focus-width: 3px;
+  --focus-gap: 2px;
+  --focus-shadow: 0 0 0 4px rgb(37 99 235 / 16%);
+  --hover-shadow: 0 8px 16px rgb(15 23 42 / 6%);
+  --dialog-shadow: 0 24px 48px rgb(15 23 42 / 24%);
+  --transition: 160ms ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: var(--body-size);
+  font-weight: var(--normal);
+  line-height: var(--body-line);
+  letter-spacing: -0.025em;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.container {
+  width: min(var(--page-width), calc(100% - var(--page-padding) * 2));
+  margin: 0 auto;
+  padding: var(--space-32) 0 var(--space-48);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: var(--focus-width) solid var(--focus);
+  outline-offset: var(--focus-gap);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0 0 var(--space-16);
+}
+
+strong,
+button {
+  font-family: var(--title-font);
+}
+
+/* 제목, 본문과 보조 설명에 사용하는 공통 글자 스타일이다. */
+h1,
+h2,
+h3,
+.title-text,
+.section-text,
+.subtitle-text {
+  color: var(--text);
+  font-family: var(--title-font);
+  font-weight: var(--bold);
+  line-height: var(--title-line);
+}
+
+h1,
+.title-text {
+  font-size: var(--title-size);
+}
+
+h2,
+.section-text {
+  font-size: var(--section-size);
+}
+
+h3,
+.subtitle-text {
+  font-size: var(--subtitle-size);
+  font-weight: var(--medium);
+}
+
+.body-text {
+  font-family: var(--font);
+  font-size: var(--body-size);
+  font-weight: var(--normal);
+  line-height: var(--body-line);
+}
+
+.sub-text {
+  color: var(--sub-text);
+}
+
+strong,
+b {
+  font-weight: var(--bold);
+}
+
+::selection {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+}
