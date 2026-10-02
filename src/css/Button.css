@@ -1,0 +1,50 @@
+:where(.button) {
+  min-height: var(--button-height);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-small);
+  background: var(--primary);
+  color: var(--surface);
+  padding: 0 var(--space-16);
+  font-size: var(--body-size);
+  font-weight: var(--medium);
+  line-height: var(--title-line);
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+:where(.button):hover:not(:disabled) {
+  border-color: var(--primary-dark);
+  background: var(--primary-dark);
+  color: var(--surface);
+}
+
+:where(.button):disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.button--full {
+  width: 100%;
+}
+
+.button--secondary {
+  border-color: var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.button--secondary:hover:not(:disabled) {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.button--danger {
+  border-color: var(--busy);
+  background: var(--busy);
+}
+
+.button--danger:hover:not(:disabled) {
+  border-color: var(--busy-dark);
+  background: var(--busy-dark);
+}

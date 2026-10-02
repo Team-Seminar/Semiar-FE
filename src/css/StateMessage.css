@@ -1,0 +1,50 @@
+.message {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+  min-height: var(--input-height);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-small);
+  background: var(--surface);
+  color: var(--text);
+  padding: var(--space-12) var(--space-16);
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+}
+
+.message-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.message-text > :last-child {
+  margin-bottom: 0;
+}
+
+.message-action {
+  flex: 0 0 auto;
+}
+
+.message--default,
+.message--empty {
+  color: var(--sub-text);
+}
+
+.message--loading {
+  border-color: var(--pending-border);
+  background: var(--pending-bg);
+  color: var(--pending);
+}
+
+.message--success {
+  border-color: var(--available-border);
+  background: var(--available-bg);
+  color: var(--available);
+}
+
+.message--error {
+  border-color: var(--busy-border);
+  background: var(--busy-bg);
+  color: var(--busy);
+}
